@@ -1,0 +1,13 @@
+Ques 1 query:  select MAX(salary) from employees where salary < (select MAX(salary) from employees);
+
+
+Ques 2 query:   SELECT department_id, first_name, salary FROM employees d WHERE salary = (SELECT MAX(salary) FROM employees WHERE department_id = d.department_id);
+
+
+Ques 3 query:   select l.city , count(e.first_name) as Employees from employees e, departments d , locations l where e.department_id = d.department_id and d.location_id = l.location_id group by city;
+
+
+Ques4 query:   SELECT to_char(hire_date, 'yyyy') as YEAR , COUNT(first_name) as Employees FROM employees GROUP BY to_char(hire_date, 'yyyy') ORDER BY to_char(hire_date, 'yyyy') ;
+
+
+Ques5 query: select  first_name, salary from employees order by salary desc limit 2
